@@ -7,7 +7,7 @@ use std::collections::HashMap;
 /// The latest version of the format the model structs deserialize to
 pub const CURRENT_FORMAT_VERSION: usize = 0;
 
-#[derive(Serialize, Deserialize, Debug, Clone)]
+#[derive(Serialize, Deserialize, Debug, Clone, PartialEq)]
 #[serde(rename_all = "snake_case")]
 /// The version type
 pub enum VersionType {
@@ -33,7 +33,7 @@ impl VersionType {
     }
 }
 
-#[derive(Serialize, Deserialize, Debug, Clone)]
+#[derive(Serialize, Deserialize, Debug, Clone, PartialEq)]
 #[serde(rename_all = "camelCase")]
 /// A game version of Minecraft
 pub struct Version {
